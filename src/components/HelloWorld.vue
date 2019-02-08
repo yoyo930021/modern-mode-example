@@ -100,6 +100,11 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
+
+  async mounted() {
+    const data = await fetch("https://www.google.com.tw");
+    console.log(data);
+  }
 }
 </script>
 
